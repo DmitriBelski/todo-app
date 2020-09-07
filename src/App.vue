@@ -1,58 +1,79 @@
 <template>
   <div id="app">
     <h1>Todo Application</h1>
-    <section class="todo-wrapper">
-      <form>
-        <input type="text" class="input-todo" placeholder="Что бы такое запланировать?">
-        <div class="btn btn-add">+</div>
-      </form>
 
-      <ul>
-        <li>
-          <input class="todo-checkbox" :id="1" type="checkbox">
-          <label :for="1"></label>
-          <span class="todo-text">
-            <p class="title">Помыть кота</p>
-            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet rem hic voluptatibus quaerat, error reprehenderit est at possimus! Perferendis eveniet enim porro fuga sed veritatis, quos voluptatum nihil voluptates dolores dicta nemo laboriosam? Eveniet, repellat quis? Ipsa veniam optio, eum error, rerum iste nostrum officiis, blanditiis explicabo eos eveniet fugit?</p>
-          </span>
+    <div class="wrapper">
+
+      <section class="folder-wrapper">
+        <div class="btn folder-btn btn-add">+</div>
+        <div class="folder">cd..</div>
+        <div class="folder selected">
+          Покупки
           <span class="delete"></span>
-        </li>
-        <li>
-          <input class="todo-checkbox" :id="2" type="checkbox">
-          <label :for="2"></label>
-          <span class="todo-text">
-            <p class="title">Вытряхнуть коврик из большой комнаты, под журнальным столиком</p>
-            <p class="description open">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet rem hic voluptatibus quaerat, error reprehenderit est at possimus! Perferendis eveniet enim porro fuga sed veritatis, quos voluptatum nihil voluptates dolores dicta nemo laboriosam? Eveniet, repellat quis? Ipsa veniam optio, eum error, rerum iste nostrum officiis, blanditiis explicabo eos eveniet fugit?</p>
-          </span>
-          <span class="delete"></span>
-        </li>
-        <li>
-          <input class="todo-checkbox" :id="3" type="checkbox">
-          <label :for="3"></label>
-
-          <form class="edit">
-            <input class="edit-title" type="text">
-            <!-- <input class="edit-description" type="text"> -->
-            <!-- <textarea class="edit-title" rows="1" type="text"></textarea> -->
-            <textarea class="edit-description" rows="4" type="text"></textarea>
-          </form>
-
-          <span class="delete"></span>
-        </li>
-      </ul>
-
-      <div class="todo-footer">
-        <div class="items_left">6 items left</div>
-        <div class="control-buttons">
-          <div class="btn btn-secondary">All</div>
-          <div class="btn btn-secondary">Active</div>
-          <div class="btn btn-secondary">Completed</div>
         </div>
-        <div class="btn btn-secondary clear">Clear Completed</div>
-      </div>
+        <div class="folder">Учеба</div>
+        <div class="folder">Работа</div>
+        <div class="folder">Домашние дела, мытье полов, посуды, стирка</div>
+        <div class="folder">Здоровье</div>
+        <div class="folder">Спорт</div>
+        <div class="folder">Виолончель</div>
+        <div class="folder">Китайский язык</div>
+        <div class="folder">
+          <input class="edit-folder" type="text">
+        </div>
+      </section>
 
-    </section>
-  </div>
+      <section class="todo-wrapper">
+        <form>
+          <input type="text" class="input-todo" placeholder="Что бы такое запланировать?">
+          <div class="btn btn-add">+</div>
+        </form>
+
+        <ul>
+          <li class="selected">
+            <input class="todo-checkbox" :id="1" type="checkbox">
+            <label :for="1"></label>
+            <span class="todo-text">
+              <p class="title">Помыть кота</p>
+              <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet rem hic voluptatibus quaerat, error reprehenderit est at possimus! Perferendis eveniet enim porro fuga sed veritatis, quos voluptatum nihil voluptates dolores dicta nemo laboriosam? Eveniet, repellat quis? Ipsa veniam optio, eum error, rerum iste nostrum officiis, blanditiis explicabo eos eveniet fugit?</p>
+            </span>
+            <span class="delete"></span>
+          </li>
+          <li>
+            <input class="todo-checkbox" :id="2" type="checkbox">
+            <label :for="2"></label>
+            <span class="todo-text">
+              <p class="title">Вытряхнуть коврик из большой комнаты, под журнальным столиком</p>
+              <p class="description open">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet rem hic voluptatibus quaerat, error reprehenderit est at possimus! Perferendis eveniet enim porro fuga sed veritatis, quos voluptatum nihil voluptates dolores dicta nemo laboriosam? Eveniet, repellat quis? Ipsa veniam optio, eum error, rerum iste nostrum officiis, blanditiis explicabo eos eveniet fugit?</p>
+            </span>
+            <span class="delete"></span>
+          </li>
+          <li>
+            <input class="todo-checkbox" :id="3" type="checkbox">
+            <label :for="3"></label>
+
+            <form class="edit">
+              <input class="edit-title" type="text">
+              <textarea class="edit-description" rows="4" type="text"></textarea>
+            </form>
+
+            <span class="delete"></span>
+          </li>
+        </ul>
+
+        <div class="todo-footer">
+          <div class="items_left">6 items left</div>
+          <div class="control-buttons">
+            <div class="btn btn-secondary">All</div>
+            <div class="btn btn-secondary">Active</div>
+            <div class="btn btn-secondary">Completed</div>
+          </div>
+          <div class="btn btn-secondary clear">Clear Completed</div>
+        </div>
+      </section>
+  
+    </div>
+  </div>  
 </template>
 
 <script>
@@ -85,16 +106,99 @@ body {
 }
 
 h1{
+  font-size: 2.7rem;
   color: #fff;
   text-align: center;
-  margin-bottom: 40px;
+  margin-top: 0;
+  margin-bottom: 30px;
 }
 
-.todo-wrapper{
-  width: 500px;
-  max-width: 100%;
-  min-height: 400px;
-  margin: 20px auto 50px;
+@media only screen and (min-width: 813px) 
+{
+  .wrapper {
+    align-items: flex-start;
+  }
+  .folder-wrapper {
+    margin-right: 20px;
+    
+  flex-direction: column;
+  }
+  .folder-btn  {
+    margin-bottom: 8px;
+  }
+}
+
+@media only screen and (max-width: 812px) 
+{
+  .wrapper {
+    flex-direction: column;
+  }
+  .folder-wrapper {
+    min-width: 400px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .folder,.folder-btn {
+    width: 49%;
+    height: auto;
+    min-height: 10px;
+  }
+  .folder-btn {
+    margin: 5px 0;
+  }
+}
+
+.wrapper {
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.folder-wrapper {
+  padding: 20px;
+  flex: 2;
+  box-shadow: 0 0 15px 0 rgba(0,0,0,0.1);
+  background-color: #f4f7fc;
+  border-radius: 4px;
+  display: flex;
+}
+
+.folder {
+  position: relative;
+  background-color: #fcab1035;
+  font-weight: bold;
+  border-radius: 3px;
+  padding: 12px 55px 12px 12px;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.folder:hover {
+  background-color: #fcab1045;
+}
+
+.folder.selected {
+  background-color: #fcab1065;
+}
+
+.edit-folder {
+  color: #444;
+  font-weight: bold;
+  border: none;
+  background: transparent;
+  padding: 0;
+  width: 100%;
+}
+
+.edit-folder:focus {
+  outline: none;
+}
+
+.todo-wrapper {
+  flex: 5;
+  min-width: 400px;
   border: 1px solid #eee;
   border-radius: 4px;
   padding: 20px 20px;
@@ -150,26 +254,29 @@ form {
 }
 
 .btn-add {
-  background: #ddd;
+  background-color: #ddd;
   color: #fefefe;
   border-color: #ddd;
   min-width: 40px;
-  pointer-events: none;
-  transition: all ease-in 0.25s;
+  /* pointer-events: none; */
+  transition: background-color ease-in 0.25s;
   font-size: 2.2em;
   line-height: 0.5em;
   padding: 0.3em 0.3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.btn-add:hover{
-  background: #4442f6;
+.btn-add:hover {
+  background-color: #4442f6;
   cursor: pointer;
 }
 
 .todo-footer {
   margin-top: auto;
   display: flex;
-  font-size: 0.7rem;
+  font-size: 0.9  rem;
   align-items: center;
   justify-content: space-between;
   padding-top: 5px;
@@ -228,10 +335,19 @@ li {
   display: flex;
   align-items: center;
   position: relative;
+  cursor: pointer;
 }
 
 li:last-child {
   margin-bottom: 0;
+}
+
+li:hover {
+  background: rgba(144, 70, 207, 0.15);
+}
+
+li.selected {
+  background: rgba(144, 70, 207, 0.25);
 }
 
 .todo-text{
@@ -244,6 +360,8 @@ li:last-child {
   margin: 0;
   margin-bottom: 0.5em;
   font-weight: bold;
+  cursor: text;
+  display: inline-block;
 }
 
 .description {
@@ -253,6 +371,7 @@ li:last-child {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  cursor: text;
 }
 
 .description.open {
@@ -321,12 +440,12 @@ li:last-child {
   transition: all ease-in 0.25s;
 }
 
-li:hover .delete{
+li:hover .delete, .folder:hover .delete{
   width: 44px;
   opacity: 1;
 }
 
-li:hover .delete:after{
+li:hover .delete:after, .folder:hover .delete:after{
   transform: translate(-50%, -50%) scale(1);
 }
 
@@ -340,8 +459,7 @@ li:hover .delete:after{
 .edit-title {
   color: #444;
   font-weight: bold;
-  border: none; 
-  transition: all ease-in 0.25s;
+  border: none;
   margin-bottom: 8px;
   background: transparent;
   padding: 0;
