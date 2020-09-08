@@ -4,7 +4,7 @@
 
 This project is a advanced Todo SPA (Single Page App) inspired by [Procontext Co LTD](https://procontext.ru). Perfect to learn and demonstrate the basics about Vue.js with no any UI framework.
 
-### Online **[DEMO](https://DmitriBelski.github.io/todo-app/index.html)**
+### Online **[DEMO](https://DmitriBelski.github.io/todo-app)**
 
 ## Основные функции:
 
