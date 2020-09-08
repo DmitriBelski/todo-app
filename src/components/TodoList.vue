@@ -5,7 +5,7 @@
       @title-changed="titleChanged"
     />
     
-    <ul>
+    <ul v-if="todos.length>0">
       <TodoItem v-for="(todo, index) in todos" :key="index"
         :todo = todo
         :index = index
@@ -13,6 +13,7 @@
         @selection-toggled = "updateSelected"
       />
     </ul>
+    <h2 v-else align="center">No todos</h2>
 
     <div class="todo-footer">
       <div class="items_left">{{todos.filter(t => !t.completed).length}} items left</div>

@@ -119,6 +119,7 @@ li {
   align-items: center;
   position: relative;
   cursor: pointer;
+  transition: all ease-in 0.25s;
 }
 
 li:hover {
