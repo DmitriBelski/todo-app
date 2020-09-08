@@ -2,6 +2,14 @@
   <div id="app">
     <h1>Todo Application</h1>
 
+    <Popup 
+      v-if="isInfoPopupVisible"
+      @close-popup = "closePopupInfo"
+      @submit-popup = "removeTodo"
+    >
+      <p style="padding: 0 10px 10px 10px; margin: 0 10px 10px 10px">Вы уверены, что хотите удалить задачу вместе с ее описанием?</p>
+    </Popup>
+
     <div class="wrapper">
       <TodoFolder 
         @folder-selected = "folderSelected"
@@ -10,7 +18,7 @@
       <section class="todo-wrapper">
         <TodoList 
           :todos = folderedTodos
-          @remove-todo = "removeTodo"
+          @remove-todo = "showPopupInfo"
           @add-todo = "addTodo"
           @title-changed = "titleChanged"
           @set-filter = "setFilter"
@@ -26,11 +34,12 @@
 <script>
 import TodoFolder from '@/components/TodoFolder.vue'
 import TodoList from '@/components/TodoList.vue'
+import Popup from '@/components/Popup.vue'
 
 export default {
   name: 'App',
   components: {
-    TodoFolder, TodoList
+    TodoFolder, TodoList, Popup
   },
   data() {
     return {
@@ -61,14 +70,16 @@ export default {
           title: 'Съесть арбуз',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet rem hic voluptatibus quaerat, error reprehenderit est at possimus! Perferendis eveniet enim porro fuga sed veritatis, quos voluptatum nihil voluptates dolores dicta nemo laboriosam? Eveniet, repellat quis? Ipsa veniam optio, eum error, rerum iste nostrum officiis, blanditiis explicabo eos eveniet fugit?',
           completed: false,
-          folder: ''
+          folder: '',
+          idToRemove: null
         }
       ],
       filteredtodos: [],
       filter: 'all',
       search: '',
       selectedFolder: '',
-      idsOfSelected: []
+      idsOfSelected: [],
+      isInfoPopupVisible: false
     }
   },
   computed: {
@@ -123,8 +134,9 @@ export default {
     }
   },
   methods: {
-    removeTodo(id) {
-      this.todos = this.todos.filter(t => t.id !== id)
+    removeTodo() {
+      this.todos = this.todos.filter(t => t.id !== this.idToRemove)
+      this.closePopupInfo()
     },
     removeCompleted() {
       this.todos = this.todos.filter(t => !t.completed)
@@ -151,6 +163,13 @@ export default {
     },
     selectedArray(array) {
       this.idsOfSelected = [...array]
+    },
+    showPopupInfo(id) {
+      this.idToRemove = id
+      this.isInfoPopupVisible = true
+    },
+    closePopupInfo() {
+      this.isInfoPopupVisible = false
     }
   }
 }

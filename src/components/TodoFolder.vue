@@ -1,5 +1,14 @@
 <template>
   <section class="folder-wrapper">
+
+    <Popup 
+      v-if="isInfoPopupVisible"
+      @close-popup = "closePopupInfo"
+      @submit-popup = "submitRemove"
+    >
+      <p style="padding: 0 10px 10px 10px; margin: 0 10px 10px 10px">Вы уверены, что хотите удалить папку со всем ее содержимым?</p>
+    </Popup>
+
     <div class="btn folder-btn btn-add" @click="addFolder">+</div>
     <div class="folder" @click="toggleSelected(-1)" :class="{selected: nothingSelected}">cd..</div>
 
@@ -18,8 +27,11 @@
 </template>
 
 <script>
+import Popup from './Popup.vue'
+
 export default {
   name: 'TodoFolder',
+  components: { Popup },
   data() {
     return {
       folders: [
@@ -31,7 +43,9 @@ export default {
         { title: 'Спорт', selected: false, editing: false },
         { title: 'Виолончель', selected: false, editing: false },
         { title: 'Китайский язык', selected: false, editing: false }
-      ]
+      ],
+      isInfoPopupVisible: false,
+      indexToSubmit: null
     }
   },
   methods: {
@@ -70,10 +84,21 @@ export default {
     },
     clickHandler(e, index) {
       if (e.target.tagName === 'SPAN') {
-        this.removeFolder(index)
+        this.indexToSubmit = index
+        this.showPopupInfo()
       } else {
-        this.toggleSelected(index)
+        this.toggleSelected(this.indexToSubmit)
       }
+    },
+    showPopupInfo() {
+      this.isInfoPopupVisible = true
+    },
+    submitRemove() {
+      this.removeFolder(this.indexToSubmit)
+      this.closePopupInfo()
+    },
+    closePopupInfo() {
+      this.isInfoPopupVisible = false
     }
   },
   computed: {
@@ -100,6 +125,7 @@ export default {
   padding: 12px 55px 12px 12px;
   margin: 5px 0;
   cursor: pointer;
+  transition: all ease-in 0.25s;
 }
 
 .folder-title{
