@@ -87,7 +87,7 @@ export default {
         this.indexToSubmit = index
         this.showPopupInfo()
       } else {
-        this.toggleSelected(this.indexToSubmit)
+        this.toggleSelected(index)
       }
     },
     showPopupInfo() {

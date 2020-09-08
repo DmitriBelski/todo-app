@@ -6,6 +6,16 @@ This project is a advanced Todo SPA (Single Page App) inspired by [Procontext Co
 
 ### Online **[DEMO](https://DmitriBelski.github.io/todo-app/index.html)**
 
+## Основные функции:
+
+- Выдели папку перед тем как создать новую задачу, она появится в этой папке.
+- Выдели одну или несколько задач в какой либо папке и нажми на другую папку, задачи переместятся по назначению.
+- Удаляй папки вместе со всеми задачами внутри.
+- Двойной щелчок по любому тексту в папках или задачах и можно редактировать.
+- cd.. - это корневая папкаю
+
+![example](example.jpg)
+
 ## Instalation
 
 ### Clone repository
