@@ -21,8 +21,9 @@
         <div class="btn btn-secondary" @click="$emit('set-filter', 'all')">All</div>
         <div class="btn btn-secondary" @click="$emit('set-filter', 'active')">Active</div>
         <div class="btn btn-secondary" @click="$emit('set-filter', 'completed')">Completed</div>
+        <div class="btn btn-secondary clear" @click="$emit('remove-completed')">Clear All Completed</div>
       </div>
-      <div class="btn btn-secondary clear" @click="$emit('remove-completed')">Clear All Completed</div>
+      
     </div>
   </div>
 </template>
@@ -87,21 +88,24 @@ ul {
 }
 
 .todo-footer {
-  margin-top: auto;
   display: flex;
-  font-size: 0.9  rem;
+  font-size: 0.8em;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding-top: 5px;
   border-top: 1px solid #ccc;
 }
 
 .items_left {
-  font-weight: bold; 
+  font-weight: bold;
+  white-space: nowrap;
 }
 
 .control-buttons {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin-left: 10px;
 }
 
 .control-buttons.btn-secondary {

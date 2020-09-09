@@ -60,7 +60,9 @@ export default {
   padding: 6px 16px 16px 16px;
   position: fixed;
   top: 50px;
-  width: 400px;
+  margin: 20px auto;
+  max-width: 400px;
+  width:  80%;
   background: #fff;
   box-shadow: 0 0 17px 0 #00000033;
   border-radius: 4px;

@@ -271,6 +271,7 @@ h1{
 
 .folder-wrapper {
   padding: 20px;
+  min-width: 250px;
   flex: 2;
   box-shadow: 0 0 15px 0 rgba(0,0,0,0.1);
   background-color: #f4f7fc;
@@ -280,7 +281,7 @@ h1{
 
 .todo-wrapper {
   flex: 5;
-  min-width: 400px;
+  min-width: 250px;
   border: 1px solid #eee;
   border-radius: 4px;
   padding: 20px 20px;
@@ -313,8 +314,6 @@ h1{
   background-color: #ddd;
   color: #fefefe;
   border-color: #ddd;
-  min-width: 40px;
-  /* pointer-events: none; */
   transition: background-color ease-in 0.25s;
   font-size: 2.2em;
   line-height: 0.5em;
