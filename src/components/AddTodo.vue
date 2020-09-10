@@ -55,6 +55,7 @@ input {
 
 .input-todo {
   margin-right: 8px;
+  min-width: 150px;
   border: 1px solid #ddd; 
   flex: 1;
   transition: all ease-in 0.25s;

@@ -1,16 +1,15 @@
 <template>
   <div>
 
-    <li :class="{selected: this.selected}" @click="toggleSelected">
+    <li :class="{selected: this.selected}" @click="hanldeClick">
       <input class="todo-checkbox" :id="index" type="checkbox" v-model="todo.completed">
       <label :for="index"></label>
 
       <span v-if="!editing" class="todo-text" :class="{edit: editing}">
         <p class="title" @dblclick="editingTitle = true" :class="{checked: todo.completed}">{{todo.title}}</p>
-        <p class="description"
+        <p class="description" ref="description"
           :class="{open: descriptionOpen, checked: todo.completed}"
           @dblclick="editingDescription = true"
-          @click="descriptionOpen = !descriptionOpen"
         >
           {{todo.description}}
         </p>
@@ -23,9 +22,8 @@
           @blur="doneEditTitle"
           @keyup.enter="doneEditTitle"
           @keyup.esc="cancelEditTitle">
-        <p class="description"
+        <p class="description" ref="description"
           :class="{open: descriptionOpen, checked: todo.completed}"
-          @click="descriptionOpen = !descriptionOpen"
         >
           {{todo.description}}
         </p>
@@ -97,6 +95,16 @@ export default {
     toggleSelected() {
       this.selected = !this.selected
       this.$emit('selection-toggled', this.todo.id, this.selected)
+    },
+    clickDescription() {
+      this.descriptionOpen = !this.descriptionOpen
+    },
+    hanldeClick(e) {
+      if (e.target === this.$refs['description']) {
+        this.clickDescription()
+      } else {
+        this.toggleSelected()
+      }
     },
     clearSelected() {
       this.selected = false

@@ -49,29 +49,28 @@ export default {
           title: 'Помыть кота',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet rem hic voluptatibus quaerat, error reprehenderit est at possimus! Perferendis eveniet enim porro fuga sed veritatis, quos voluptatum nihil voluptates dolores dicta nemo laboriosam? Eveniet, repellat quis? Ipsa veniam optio, eum error, rerum iste nostrum officiis, blanditiis explicabo eos eveniet fugit?',
           completed: true,
-          folder: 'Покупки'
+          folder: 'Домашние дела'
         },
         {
           id: 2,
           title: 'Вытряхнуть коврик из большой комнаты, под журнальным столиком',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet rem hic voluptatibus quaerat, error reprehenderit est at possimus! Perferendis eveniet enim porro fuga sed veritatis, quos voluptatum nihil voluptates dolores dicta nemo laboriosam? Eveniet, repellat quis? Ipsa veniam optio, eum error, rerum iste nostrum officiis, blanditiis explicabo eos eveniet fugit?',
           completed: false,
-          folder: 'Учеба'
+          folder: 'Домашние дела'
         } ,
         {
           id: 3,
           title: 'Прогуляться в парке',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet rem hic voluptatibus quaerat, error reprehenderit est at possimus! Perferendis eveniet enim porro fuga sed veritatis, quos voluptatum nihil voluptates dolores dicta nemo laboriosam? Eveniet, repellat quis? Ipsa veniam optio, eum error, rerum iste nostrum officiis, blanditiis explicabo eos eveniet fugit?',
           completed: false,
-          folder: 'Учеба'
+          folder: 'Здоровье'
         },
         {
           id: 4,
-          title: 'Съесть арбуз',
+          title: 'Пройти ТехОбслуживание',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet rem hic voluptatibus quaerat, error reprehenderit est at possimus! Perferendis eveniet enim porro fuga sed veritatis, quos voluptatum nihil voluptates dolores dicta nemo laboriosam? Eveniet, repellat quis? Ipsa veniam optio, eum error, rerum iste nostrum officiis, blanditiis explicabo eos eveniet fugit?',
           completed: false,
-          folder: '',
-          idToRemove: null
+          folder: ''
         },
         {
           id: 5,
@@ -79,23 +78,20 @@ export default {
           description: 'Vue.js — JavaScript-фреймворк с открытым исходным кодом для создания пользовательских интерфейсов[6]. Легко интегрируется в проекты с использованием других JavaScript-библиотек. Может функционировать как веб-фреймворк для разработки одностраничных приложений в реактивном стиле.',
           completed: false,
           folder: 'Учеба',
-          idToRemove: null
         },
         {
           id: 6,
           title: 'Написать первое ToDo приложение на Angular',
           description: 'AngularJS — JavaScript-фреймворк с открытым исходным кодом. Предназначен для разработки одностраничных приложений[5]. Его цель — расширение браузерных приложений на основе MVC-шаблона, а также упрощение тестирования и разработки. Фреймворк работает с HTML, содержащим дополнительные пользовательские атрибуты, которые описываются директивами, и связывает ввод или вывод области страницы с моделью, представляющей собой обычные переменные JavaScript. Значения этих переменных задаются вручную или извлекаются из статических или динамических JSON-данных.',
           completed: false,
-          folder: 'Учеба',
-          idToRemove: null
+          folder: 'Учеба'
         },
         {
           id: 7,
           title: 'Прочитать книгу React с нуля до героя',
           description: 'React (иногда React.js или ReactJS) — JavaScript-библиотека[5] с открытым исходным кодом для разработки пользовательских интерфейсов. React разрабатывается и поддерживается Facebook, Instagram и сообществом отдельных разработчиков и корпораций[6][7][8]. React может использоваться для разработки одностраничных и мобильных приложений. Его цель — предоставить высокую скорость, простоту и масштабируемость. В качестве библиотеки для разработки пользовательских интерфейсов React часто используется с другими библиотеками, такими как MobX, Redux и GraphQL .',
           completed: false,
-          folder: 'Учеба',
-          idToRemove: null
+          folder: 'Учеба'
         }
       ],
       filteredtodos: [],
@@ -103,7 +99,8 @@ export default {
       search: '',
       selectedFolder: '',
       idsOfSelected: [],
-      isInfoPopupVisible: false
+      isInfoPopupVisible: false,
+      idToRemove: null
     }
   },
   computed: {

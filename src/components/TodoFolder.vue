@@ -38,11 +38,9 @@ export default {
         { title: 'Покупки', selected: false, editing: false },
         { title: 'Учеба', selected: false, editing: false },
         { title: 'Работа', selected: false, editing: false },
-        { title: 'Домашние дела, мытье посуды, стирка', selected: false, editing: false },
+        { title: 'Домашние дела', selected: false, editing: false },
         { title: 'Здоровье', selected: false, editing: false },
-        { title: 'Спорт', selected: false, editing: false },
-        { title: 'Виолончель', selected: false, editing: false },
-        { title: 'Китайский язык', selected: false, editing: false }
+        { title: 'Спорт', selected: false, editing: false }
       ],
       isInfoPopupVisible: false,
       indexToSubmit: null

@@ -91,7 +91,7 @@ ul {
   display: flex;
   font-size: 0.8em;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding-top: 5px;
   border-top: 1px solid #ccc;
 }
@@ -99,6 +99,9 @@ ul {
 .items_left {
   font-weight: bold;
   white-space: nowrap;
+  align-self: flex-end;
+  padding: 10px;
+  padding-left: 0;
 }
 
 .control-buttons {
