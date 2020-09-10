@@ -244,19 +244,17 @@ h1{
     flex-direction: column;
   }
   .folder-wrapper {
-    min-width: 400px;
     margin-bottom: 20px;
-    /* display: flex; */
     justify-content: space-between;
     flex-wrap: wrap;
   }
-  .folder,.folder-btn {
-    width: 49%;
+  .folder, .folder-btn {
+    flex-grow: 1;
     height: auto;
     min-height: 10px;
   }
   .folder-btn {
-    margin: 5px 0;
+    margin: 5px;
   }
 }
 
@@ -267,7 +265,7 @@ h1{
 }
 
 .folder-wrapper {
-  padding: 20px;
+  padding: 15px;
   min-width: 250px;
   flex: 2;
   box-shadow: 0 0 15px 0 rgba(0,0,0,0.1);

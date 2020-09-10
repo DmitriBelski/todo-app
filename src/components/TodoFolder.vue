@@ -113,7 +113,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .folder {
   position: relative;
   background-color: #fcab1035;
@@ -121,9 +121,13 @@ export default {
   box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2);
   border-radius: 3px;
   padding: 12px 55px 12px 12px;
-  margin: 5px 0;
+  margin: 5px;
   cursor: pointer;
   transition: all ease-in 0.25s;
+}
+
+.folder-btn {
+  margin: 5px 5px 8px;
 }
 
 .folder-title{
